@@ -119,6 +119,7 @@
 
 import { useState, useRef } from "react";
 import * as XLSX from "xlsx";
+import Image from "next/image";
 
 export default function AIChatHero() {
   const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
@@ -169,13 +170,12 @@ export default function AIChatHero() {
         {/* Left Section – EduFlex Style */}
         <div className="space-y-6">
           <h1 className="text-5xl font-bold text-gray-900 leading-tight">
-           Smarter Shopping with AI, 
- <span className="text-purple-600">Tailored Just for You</span><br />
-           
+            Smarter Shopping with AI,{" "}
+            <span className="text-purple-600">Tailored Just for You</span>
+            <br />
           </h1>
           <p className="text-lg text-gray-600">
-           Your personal AI shopping assistant — helping you find the right products, instantly and effortlessly.
-
+            Your personal AI shopping assistant — helping you find the right products, instantly and effortlessly.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -260,19 +260,23 @@ export default function AIChatHero() {
             </div>
           </div>
 
-          {/* Decorative Avatars */}
+          {/* Decorative Avatars using Next.js Image */}
           <div className="absolute top-[-25px] left-[-25px]">
-            <img
+            <Image
               src="https://randomuser.me/api/portraits/women/44.jpg"
               alt="Avatar"
-              className="h-12 w-12 rounded-full border-4 border-white shadow-md"
+              width={48}
+              height={48}
+              className="rounded-full border-4 border-white shadow-md"
             />
           </div>
           <div className="absolute bottom-[-25px] right-[-25px]">
-            <img
+            <Image
               src="https://randomuser.me/api/portraits/men/18.jpg"
               alt="Avatar"
-              className="h-14 w-14 rounded-full border-4 border-white shadow-md"
+              width={56}
+              height={56}
+              className="rounded-full border-4 border-white shadow-md"
             />
           </div>
         </div>
